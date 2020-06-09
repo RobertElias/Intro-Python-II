@@ -9,4 +9,5 @@ class Player:
     def __str__(self):
         return(f'Player {self.name} is currently in {self.current_room} room')
 
+
 print(Player)
