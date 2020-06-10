@@ -50,3 +50,6 @@ player = Player(input('Please enter your name: '), room['outside'])
 # Print an error message if the movement isn't allowed.
 #
 # If the user enters "q", quit the game.
+while True:
+    print(player.current_room.name)
+    print(player.current_room.description)
