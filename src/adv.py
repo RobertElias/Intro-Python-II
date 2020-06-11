@@ -90,3 +90,9 @@ while True:
             print('You seem to be going in the wrong direction')
     else:
         print('Please make a different selection')
+
+try: 
+    player.current_room = getattr(player.current_room)
+
+except AttributeError:
+    print('You are unable to enter!!!')
