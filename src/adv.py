@@ -53,3 +53,40 @@ player = Player(input('Please enter your name: '), room['outside'])
 while True:
     print(player.current_room.name)
     print(player.current_room.description)
+
+    command = input('\nEnter a direction or press "q" to quit + "Enter" to leave: \n')
+
+    if command == 'q':
+        print("Goodbye!")
+        exit(0)
+    
+    elif command == 'n':
+        # this is north
+        if player.current_room.n_to is not None:
+            player.current_room = player.current_room.n_to
+        else:
+            print('You seem to be going in the wrong direction')
+    
+    
+    elif command == 's':
+        # this is north
+        if player.current_room.s_to is not None:
+            player.current_room = player.current_room.s_to
+        else:
+            print('You seem to be going in the wrong direction')
+    
+    elif command == 'e':
+        # this is north
+        if player.current_room.e_to is not None:
+            player.current_room = player.current_room.e_to
+        else:
+            print('You seem to be going in the wrong direction')
+    
+    elif command == 'w':
+        # this is north
+        if player.current_room.w_to is not None:
+            player.current_room = player.current_room.w_to
+        else:
+            print('You seem to be going in the wrong direction')
+    else:
+        print('Please make a different selection')
