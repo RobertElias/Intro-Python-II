@@ -54,13 +54,13 @@ while True:
     print(player.current_room.name)
     print(player.current_room.description)
 
-    command = input('\nEnter a direction or press "q" to quit + "Enter" to leave: \n')
+    cmd = input('\nEnter a direction or press "q" to quit + "Enter" to leave: \n')
 
-    if command == 'q':
+    if cmd == 'q':
         print("Goodbye!")
         exit(0)
     
-    elif command == 'n':
+    elif cmd == 'n':
         # this is north
         if player.current_room.n_to is not None:
             player.current_room = player.current_room.n_to
@@ -68,21 +68,21 @@ while True:
             print('You seem to be going in the wrong direction')
     
     
-    elif command == 's':
+    elif cmd == 's':
         # this is north
         if player.current_room.s_to is not None:
             player.current_room = player.current_room.s_to
         else:
             print('You seem to be going in the wrong direction')
     
-    elif command == 'e':
+    elif cmd == 'e':
         # this is north
         if player.current_room.e_to is not None:
             player.current_room = player.current_room.e_to
         else:
             print('You seem to be going in the wrong direction')
     
-    elif command == 'w':
+    elif cmd == 'w':
         # this is north
         if player.current_room.w_to is not None:
             player.current_room = player.current_room.w_to
