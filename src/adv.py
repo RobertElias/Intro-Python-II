@@ -1,4 +1,5 @@
 from room import Room
+from player import Player
 
 # Declare all the rooms
 
@@ -38,7 +39,7 @@ room['treasure'].s_to = room['narrow']
 #
 
 # Make a new player object that is currently in the 'outside' room.
-
+player = Player(input('Please enter your name: '), room['outside'])
 # Write a loop that:
 #
 # * Prints the current room name
@@ -49,3 +50,49 @@ room['treasure'].s_to = room['narrow']
 # Print an error message if the movement isn't allowed.
 #
 # If the user enters "q", quit the game.
+while True:
+    print(player.current_room.name)
+    print(player.current_room.description)
+
+    cmd = input('\nEnter a direction or press "q" to quit + "Enter" to leave: \n')
+
+    if cmd == 'q':
+        print("Goodbye!")
+        exit(0)
+    
+    elif cmd == 'n':
+        # this is north
+        if player.current_room.n_to is not None:
+            player.current_room = player.current_room.n_to
+        else:
+            print('You seem to be going in the wrong direction')
+    
+    
+    elif cmd == 's':
+        # this is north
+        if player.current_room.s_to is not None:
+            player.current_room = player.current_room.s_to
+        else:
+            print('You seem to be going in the wrong direction')
+    
+    elif cmd == 'e':
+        # this is north
+        if player.current_room.e_to is not None:
+            player.current_room = player.current_room.e_to
+        else:
+            print('You seem to be going in the wrong direction')
+    
+    elif cmd == 'w':
+        # this is north
+        if player.current_room.w_to is not None:
+            player.current_room = player.current_room.w_to
+        else:
+            print('You seem to be going in the wrong direction')
+    else:
+        print('Please make a different selection')
+
+try: 
+    player.current_room = getattr(player.current_room)
+
+except AttributeError:
+    print('You are unable to enter!!!')
